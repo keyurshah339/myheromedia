@@ -14,6 +14,7 @@ import LogoWhite from "../../assets/logo-white.png";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/userAuth/authSlice";
+import { Heading } from '@chakra-ui/react'
 
 export const Navigation = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -30,7 +31,7 @@ export const Navigation = () => {
         position="fixed"
         zIndex="100"
         bg={isDark ? "blackAlpha.900" : "whiteAlpha.900"}
-        w="100vw"
+        w="100%"
         justify="space-between"
         align="center"
         display={["none", "none", "flex", "flex"]}
@@ -38,13 +39,16 @@ export const Navigation = () => {
         <Link to="/">
           <Box
             w="10rem"
-            h="5rem"
+            h="4rem"
             ml="1rem"
             justify="center"
             align="center"
             display="flex"
+        style={{marginTop:"2rem"}}
+
           >
-            <Image src={isDark ? LogoWhite : LogoBlack} />
+            
+            <Heading as='h4' size='md'>My Hero Media</Heading>
           </Box>
         </Link>
         {isLoggedIn && (
@@ -148,7 +152,6 @@ export const Navigation = () => {
               </Link>{" "}
             </Flex>
           )}
-          <Switch m="2rem" isChecked={isDark} onChange={toggleColorMode} />
         </Flex>
       </Flex>
 
@@ -157,7 +160,7 @@ export const Navigation = () => {
         position="fixed"
         zIndex="10"
         bg={isDark ? "blackAlpha.900" : "whiteAlpha.900"}
-        w="100vw"
+        w="100%"
         justify="space-between"
         align="center"
         display={["flex", "flex", "none", "none"]}
@@ -165,13 +168,14 @@ export const Navigation = () => {
         <Link to="/">
           <Box
             w="10rem"
-            h="5rem"
+            h="4rem"
             ml="1rem"
             justify="center"
             align="center"
             display="flex"
+            style={{marginTop:"2rem"}}
           >
-            <Image src={isDark ? LogoWhite : LogoBlack} />
+            <Heading as='h4' size='md'>My Hero Media</Heading>
           </Box>
         </Link>
         {isLoggedIn ? (
@@ -215,7 +219,6 @@ export const Navigation = () => {
                 Signup
               </Button>
             </Link>
-            <Switch m="1rem" isChecked={isDark} onChange={toggleColorMode} />
           </Flex>
         )}
       </Flex>

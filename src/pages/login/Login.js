@@ -15,8 +15,8 @@ export const Login = () => {
   const navigate = useNavigate();
   const toast = useToast();
   const [loginCredentials, setLoginCredentials] = useState({
-    username: "admin",
-    password: "admin",
+    username: "bruce",
+    password: "qwerty",
   });
   const [isLoading, setLoading] = useState(false);
 

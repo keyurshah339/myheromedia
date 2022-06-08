@@ -9,8 +9,6 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import LogoBlack from "../../assets/logo-black.png";
-import LogoWhite from "../../assets/logo-white.png";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/userAuth/authSlice";

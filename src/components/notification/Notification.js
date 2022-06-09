@@ -24,7 +24,7 @@ export const Notification = () => {
           />
           <Text>
             <Text as="span" fontWeight="bold" mx="0.1rem">
-              Abhinav Patel
+              Bruce Wayne
             </Text>{" "}
             liked your tweet.
           </Text>

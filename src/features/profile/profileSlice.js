@@ -3,47 +3,47 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const initialState = {
-  username: "",
-  _id: "",
-  bio: "",
-  posts: [],
-  firstName: "",
-  lastName: "",
-  followers: [],
-  following: [],
-};
+  const initialState = {
+    username: "",
+    _id: "",
+    bio: "",
+    posts: [],
+    firstName: "",
+    lastName: "",
+    followers: [],
+    following: [],
+  };
 
-export const followUser = createAsyncThunk(
-  "profile/followUser",
-  async ({ username }) => {
-    try {
-      const response = await axios.post("/follow", { username });
-      return response.data.rootUserFollowing;
-    } catch (err) {
-      console.log(err);
+  export const followUser = createAsyncThunk(
+    "profile/followUser",
+    async ({ username }) => {
+      try {
+        const response = await axios.post("/follow", { username });
+        return response.data.rootUserFollowing;
+      } catch (err) {
+        console.log(err);
+      }
     }
-  }
-);
+  );
 
-export const unfollowUser = createAsyncThunk(
-  "profile/unfollowUser",
-  async ({ username }) => {
-    try {
-      const response = await axios.delete(`/follow/${username}`);
-      return response.data.rootUserFollowing;
-    } catch (err) {
-      console.log(err);
+  export const unfollowUser = createAsyncThunk(
+    "profile/unfollowUser",
+    async ({ username }) => {
+      try {
+        const response = await axios.delete(`/follow/${username}`);
+        return response.data.rootUserFollowing;
+      } catch (err) {
+        console.log(err);
+      }
     }
-  }
-);
+  );
 
-export const setUpdateUser = createAsyncThunk(
-  "profile/updateUser",
-  (user) => {
-    return user
-  }
-)
+  export const setUpdateUser = createAsyncThunk(
+    "profile/updateUser",
+    (user) => {
+      return user
+    }
+  )
 
 export const profileSlice = createSlice({
   name: "profile",

@@ -25,92 +25,35 @@ export const Navigation = () => {
   const { username } = isLoggedIn && JSON.parse(localStorage.getItem("user"));
 
   return (
-    <Flex h="5rem">
-      {/* DESKTOP  VIEW*/}
-      <Flex
-        position="fixed"
-        zIndex="100"
-        bg={isDark ? "blackAlpha.900" : "whiteAlpha.900"}
-        w="100%"
-        justify="space-between"
-        align="center"
-        display={["none", "none", "flex", "flex"]}
-      >
-        <Link to="/">
-          <Box
-            w="10rem"
-            h="4rem"
-            ml="1rem"
-            justify="center"
-            align="center"
-            display="flex"
-        style={{marginTop:"2rem"}}
+      <Flex h="5rem">
+        {/* DESKTOP  VIEW*/}
+        <Flex
+          position="fixed"
+          zIndex="100"
+          bg={isDark ? "blackAlpha.900" : "whiteAlpha.900"}
+          w="100%"
+          justify="space-between"
+          align="center"
+          display={["none", "none", "flex", "flex"]}
+        >
+          <Link to="/">
+            <Box
+              w="10rem"
+              h="4rem"
+              ml="1rem"
+              justify="center"
+              align="center"
+              display="flex"
+          style={{marginTop:"2rem"}}
 
-          >
-            
-            <Heading as='h4' size='md'>My Hero Media</Heading>
-          </Box>
-        </Link>
-        {isLoggedIn && (
-          <Flex>
-            {/* <Link to="/">
-              <Button
-                cursor="pointer"
-                variant="ghost"
-                aria-label="Home"
-                my={5}
-                w="100%"
-              >
-                Home
-              </Button>
-            </Link>
-
-            <Link to={`/profile/${username}`}>
-              <Button
-                cursor="pointer"
-                variant="ghost"
-                aria-label="Profile"
-                my={5}
-                w="100%"
-              >
-                Profile
-              </Button>
-            </Link>
-            <Link to={`/following/${username}`}>
-              <Button
-                cursor="pointer"
-                variant="ghost"
-                aria-label="Following"
-                my={5}
-                w="100%"
-              >
-                Following
-              </Button>
-            </Link>
-            <Link to={`/followers/${username}`}>
-              <Button
-                cursor="pointer"
-                variant="ghost"
-                aria-label="Following"
-                my={5}
-                w="100%"
-              >
-                Followers
-              </Button>
-            </Link> */}
-
-            {/* <Link to="/notifications">
-              <Button
-                cursor="pointer"
-                variant="ghost"
-                aria-label="Notifications"
-                my={5}
-                px={5}
-                w="100%"
-              >
-                Notifications
-              </Button>
-            </Link> */}
+            >
+              
+              <Heading as='h4' size='md'>My Hero Media</Heading>
+            </Box>
+          </Link>
+          {isLoggedIn && (
+            <Flex>
+              
           </Flex>
         )}
         <Flex>

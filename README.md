@@ -1,5 +1,5 @@
 # Universely - Social Media App
-A Social Media App Built using MERN stack with Chakra UI.
+A Social Media App Built using MERN stack.
 
 <img src="client/src/assets/SocialMedia.gif" width="400px">
 

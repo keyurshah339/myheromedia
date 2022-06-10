@@ -1,5 +1,4 @@
-# Universely - Social Media App
-A Social Media App Built using MERN stack.
+# My Hero Media - Social Media App
 
 <img src="client/src/assets/SocialMedia.gif" width="400px">
 

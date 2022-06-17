@@ -37,6 +37,33 @@ export const Login = () => {
     }
   };
 
+
+  const guestloginHandler = async () => {
+
+    setLoginCredentials({
+      username: "bruce",
+      password: "qwerty",
+    })
+
+    setLoading(true);
+    try {
+      await dispatch(login(loginCredentials));
+      console.log('location.state',location.state)
+      navigate(location.state?.from ? location.state.from : "/");
+      toast({
+        title: "Successfully logged in.",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+      });
+      setLoading(false);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+
+
   return (
     <>
       {/* DESKTOP VIEW */}
@@ -95,6 +122,22 @@ export const Login = () => {
           >
             Submit
           </Button>
+
+          <Button
+            isLoading={isLoading}
+            onClick={() => {
+              guestloginHandler();
+            }}
+            mt="1rem"
+            colorScheme="blue"
+            variant="solid"
+          >
+            Guest Login
+          </Button>
+          
+          
+
+
           <Link to="/signup">
             <Button m="1rem" colorScheme="blue" variant="link">
               New User? Click here
